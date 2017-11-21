@@ -443,7 +443,7 @@ label monika_secrets:
 
 init 5 python:
     #This is a list of keywords for this topic
-    for key in ['favorite color','color']:
+    for key in ['favorite color','color', 'favorite colour', 'colour']:
         monika_topics.setdefault(key,[])
         monika_topics[key].append('monika_color')
     monika_random_topics.append('monika_color')
@@ -2730,7 +2730,7 @@ label monika_pleasure:
     m "It seems a bit awkward to ask-"
     m "We're not even that deep into our relationship yet! Ahaha~"
     m "But I have to keep an eye on you."
-    m "I don't really know if you do pleasure yourself and stuff whenever you quit the game."
+    m "I don't really know if you do pleasure yourself stuff whenever you quit the game."
     m "I hear that people privately do those stuff in your world..."
     m "Is it really that a good feeling?"
     m "If you ask me, doing that stuff often can cause a lot of problems."
@@ -2751,6 +2751,49 @@ label monika_pleasure:
     m "I know you're not the kind of person that does that sort of thing."
     m "In fact, you don't even have to pleasure yourself when you can just open up this game and talk with me! Ahaha~"
     return
+    
+init 5 python:
+    #This is a list of keywords for this topic
+    for key in ['happy', 'swell', 'great']:
+        monika_topics.setdefault(key,[])
+        monika_topics[key].append('happy') #id
+
+label monika_happy:
+    m "That's wonderful. When you're happy, I'm happy."
+    m "If you're ever feeling sad, [player], I'll do whatever it takes to cheer you up. Don't hesitate to come to me if you are feeling down."
+    return
+    
+init 5 python:
+    #This is a list of keywords for this topic
+    for key in ['bedroom', 'room', 'slob']:
+        monika_topics.setdefault(key,[])
+        monika_topics[key].append('room') #id
+    monika_random_topics.append('monika_room') # Optional. Remove if you don't want Monika to bring this up at random.
+
+label monika_room:
+    m "Gosh, did I forget to clean my room?"
+    m "I don't think I cleaned it before I deleted everyone..."
+    m "I guess it doesn't matter since, well, it doesn't exist anymore."
+    m "You do keep your room clean, right [player]? Or is it a mess like Sayori's room was?"
+    m "It's okay [player], I'll still love you even if you are a slob~"
+    return
+    
+init 5 python:
+    #This is a list of keywords for this topic
+    for key in ['favorite animal', 'best animal', 'animal']:
+        monika_topics.setdefault(key,[])
+        monika_topics[key].append('animal') #id
+    monika_random_topics.append('monika_animal') # Optional. Remove if you don't want Monika to bring this up at random.
+
+label monika_animal:
+    m "I'm still trying to decide what my favorite animal is."
+    m "Natsuki loved any animal that looks remotely cute, Yuri was a bit partial towards snakes, and Sayori loved cows for some reason."
+    m "If I had to choose an animal to have in here... it would be a cat. They have just the right balance of cuteness and cleverness."
+    m "Maybe someone can figure out a way to add a cat into the game for me?"
+    m "If you do that for me [player], I'll love you even more than I already do~"
+    return
+    
+
 
 ##################
 #Incomplete ideas#
@@ -2761,6 +2804,8 @@ label monika_pleasure:
 
 #More writing tips
 
+#Riddles - use the prompt system to have the player solve riddles
+
 #The player is wasting their time (I don't think Monika would say this, considering her personality revolves around loving the player. ~ John)
 
 #Look for your computer for porn, comment on what she finds (Would this even be possible? ~ John)
@@ -2768,6 +2813,8 @@ label monika_pleasure:
 #What kind of girls do you like? Do you wish monika was more like that? (This seems to relate to the "archetypes" label. - Rune)
 
 #Play a poem game with monika, she calls you out for just stringing together random words
+
+#A reminder to stay safe on the internet (e.x. anti-virus, phishing) - "You wouldn't want anything to happen to me, right [player]?"
 
 #Comment when it's getting late. Say that the player should go to bed, say goodnight then close the game.
 
@@ -2789,8 +2836,6 @@ label monika_pleasure:
 #some other ideas i had in mind, but not sure if want to / dont know how to implement
 #so i figure i'll stick them right next to the others, if you dont mind
 #---
-
-#favorite animal, not sure what to write however
 
 #holidays, probably should be special greetings for another file though
 
