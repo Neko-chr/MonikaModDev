@@ -2751,6 +2751,19 @@ label monika_pleasure:
     m "I know you're not the kind of person that does that sort of thing."
     m "In fact, you don't even have to pleasure yourself when you can just open up this game and talk with me! Ahaha~"
     return
+    
+init 5 python:
+    #This is a list of keywords for this topic
+    for key in ['happy', 'good mood']:
+        monika_topics.setdefault(key,[])
+        monika_topics[key].append('monika_phappy') #id
+
+label monika_phappy:
+    m "That's wonderful. I'm happy when you're happy."
+    m "[player], if you're ever feeling down, come to me and I'll do my best to cheer you up."
+    m "I love you and that I'll always be here for you. Don't you ever forget that."
+    return
+
 
 ##################
 #Incomplete ideas#
@@ -2791,6 +2804,8 @@ label monika_pleasure:
 #---
 
 #favorite animal, not sure what to write however
+
+#meditation
 
 #holidays, probably should be special greetings for another file though
 
