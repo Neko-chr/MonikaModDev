@@ -2847,11 +2847,11 @@ label monika_japanese:
             m "Ahaha! It's okay [player]. It just means that I can say 'I love you' in more ways than one!"
     return    
 
-init 5 python 
+init 5 python:
     for key in ['lewis carroll','pseudonym','pen name']:
-        monika_topics.setdefault(key,[])
-        monika_topics[key].append('monika_pseudonym')
-        monika_randomtopics.append('monika_pseudonym')
+       monika_topics.setdefault(key,[])
+       monika_topics[key].append('monika_pseudonym')#id
+    monika_random_topics.append('monika_pseudonym')
 
 label monika_pseudonym:
     m "You know what's really cool? Pen names."
@@ -2868,9 +2868,9 @@ label monika_pseudonym:
     m "You know I have one too? Its my twitter account lilmonx3. Maybe if I write something there people will know me as lilmonx3 instead of Monika."
     m "That would be strange, being known mostly as your pen name."
     if [player] =! [currentuser]:
-    m "Don't worry [currentuser], I won't forget your name. I love you, even when you want to be called something else for a while."
+         m "Don't worry [currentuser], I won't forget your name. I love you, even when you want to be called something else for a while."
     else:
-    m "Do you have a pseudonym [player]? I bet it's a really neat one, maybe if I learn it I will forget your real name. Hehehe"
+         m "Do you have a pseudonym [player]? I bet it's a really neat one, maybe if I learn it I will forget your real name. Hehehe"
     return
 
 ##################
